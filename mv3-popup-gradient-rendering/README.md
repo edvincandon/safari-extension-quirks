@@ -16,6 +16,8 @@ In Safari 18.4+, CSS linear and radial gradients with transparent borders fail t
 2. Close the popup
 3. Reopen the popup - gradients with transparent borders no longer render, showing fallback content
 
+<img src="./screenshots/demo.gif" width="420">
+
 ## Technical Analysis
 
 The issue is potentially related to WebKit commit [289101@main](https://results.webkit.org/commit?repository=webkit&id=289101@main), affecting gradient rendering in extension contexts.
