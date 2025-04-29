@@ -1,3 +1,10 @@
+> ⚠️ This issue has been fixed in Safari 18.4
+
+## Status
+
+- **Fixed**: Safari 18.4
+- **Feedback ID**: FB14991802
+
 ## Safari MV3 Service Worker Bug
 
 This extension demonstrates a critical issue with MV3 service worker management in Safari (Version 17.6 19618.3.11.11.5). The bug causes extension functionality failure, potentially triggered when Safari clears history/cookies (via user action, settings, or ITP). This significantly impacts user experience for extensions using MV3 service worker architecture.
