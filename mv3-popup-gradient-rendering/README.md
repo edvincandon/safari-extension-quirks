@@ -1,18 +1,41 @@
+## Status
+
+- **Fixed**: No
+- **Feedback ID**: Pending
+- **Resolution**: Pending
+
 # Safari 18.4+ Linear/Radial Gradient Rendering Bug
 
 ## Issue Description
 
-In Safari 18.4+, CSS linear and radial gradients with transparent borders fail to render correctly when an extension popup is reopened.
+In Safari 18.4+, CSS linear and radial gradients with transparent borders fail to render correctly when an extension popup is reopened. This issue only occurs when the extension has an active service worker/background page.
 
 ## Reproduction Steps
 
 1. Open the extension popup - gradients render correctly
 2. Close the popup
-3. Reopen the popup - gradients with transparent borders no longer render, showing fallback content (skull emoji)
+3. Reopen the popup - gradients with transparent borders no longer render, showing fallback content
 
 ## Technical Analysis
 
-The issue relates to WebKit commit [289101@main](https://results.webkit.org/commit?repository_id=webkit&id=289101@main), affecting gradient rendering in extension contexts.
+The issue is potentially related to WebKit commit [289101@main](https://results.webkit.org/commit?repository=webkit&id=289101@main), affecting gradient rendering in extension contexts.
+
+Additional findings:
+
+- The bug only manifests when there is an active service worker/background page
+- The issue can be verified by removing the background script from manifest.json:
+
+```diff
+- "background": {
+-     "scripts": [ "background.js" ],
+-     "type": "module"
+- },
+```
+
+When this section is removed, gradients render correctly on popup reopen.
+
+- The issue also doesn't occur if the service worker terminates after a period of inactivity
+- This suggests there might be a graphics context issue where resources are improperly held or shared between the service worker and popup contexts
 
 ### Working Example
 
@@ -33,10 +56,6 @@ The issue relates to WebKit commit [289101@main](https://results.webkit.org/comm
 ```
 
 The same issue affects `radial-gradient()` with transparent borders.
-
-## Workaround
-
-Remove transparent borders from elements with gradient backgrounds.
 
 ## Environment
 
