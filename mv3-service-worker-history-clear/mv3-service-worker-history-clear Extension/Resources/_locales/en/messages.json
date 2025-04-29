@@ -1,0 +1,10 @@
+{
+    "extension_name": {
+        "message": "mv3-service-worker-history-clear Extension",
+        "description": "The display name for the extension."
+    },
+    "extension_description": {
+        "message": "This is mv3-service-worker-history-clear Extension. You should tell us what your extension does here.",
+        "description": "Description of what the extension does."
+    }
+}
