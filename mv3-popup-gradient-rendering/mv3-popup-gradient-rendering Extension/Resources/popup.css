@@ -1,0 +1,72 @@
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    width: 500px;
+    padding: 10px;
+    font-family: system-ui;
+    background: white;
+    color: black;
+}
+
+h5 {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: no-wrap;
+    margin-top: 20px;
+}
+
+.grid > div {
+    flex: 1;
+}
+
+.gradient {
+   width: 100%;
+   height: 100px;
+   background: #833AB4;
+   margin-top: 20px;
+   border-radius: 8px;
+   position: relative;
+}
+
+.gradient-radial {
+    background: radial-gradient(circle, #ffcbb8, #ffdfd0, #e2d7f0);
+}
+
+.gradient-linear {
+    background: linear-gradient(to right, #ffcbb8, #ffdfd0, #e2d7f0);
+}
+
+.gradient-pass {
+    border: none;
+}
+
+.gradient-error {
+    border: 1px solid transparent;
+}
+
+.gradient-error:before {
+    content: '💀';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+}
+
+code {
+    font-size: 11px;
+    color: darkslategrey;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+

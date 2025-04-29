@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+    <script type="module" src="popup.js"></script>
+</head>
+<body>
+    <h5>Safari 18.4 linear-gradient issue</h5>
+    <div class="grid">
+        <div>
+            <code>
+                background: linear-gradient(...);<br />
+                border: 1px solid transparent;
+            </code>
+          <div class="gradient gradient-linear gradient-error"></div>
+        </div>
+        <div>
+            <code>
+                background: linear-gradient(...);<br />
+                border: none;
+            </code>
+          <div class="gradient gradient-linear gradient-pass"></div>
+        </div>
+    </div>
+    
+    <div class="grid">
+        <div>
+            <code>
+                background: radial-gradient(...);<br />
+                border: 1px solid transparent;
+            </code>
+          <div class="gradient gradient-radial gradient-error"></div>
+        </div>
+        <div>
+            <code>
+                background: radial-gradient(...);<br />
+                border: none;
+            </code>
+          <div class="gradient gradient-radial gradient-pass"></div>
+        </div>
+    </div>
+</body>
+</html>
+
