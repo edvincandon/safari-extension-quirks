@@ -1,0 +1,29 @@
+body {
+    width: 500px;
+    padding: 10px;
+    background: white;
+    color; black;
+    font-family: system-ui;
+    text-align: center;
+}
+
+button {
+    padding: 15px;
+}
+
+#logs {
+    margin: 20px 0px;
+    border: 1px solid slategray;
+    padding: 5px;
+    height: 250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.log {
+    font-family: monospace;
+    font-size: 10px;
+    margin: 0;
+    text-align: left;
+    max-width: 100%;
+}
